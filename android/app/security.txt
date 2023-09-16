@@ -1,0 +1,8 @@
+Variant: debug
+Config: debug
+Store: C:\Users\mbiha\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 08:BC:28:62:55:37:F5:38:38:29:FE:19:88:0E:28:92
+SHA1: E5:DA:9D:0A:DC:58:A6:44:E4:70:77:0A:38:28:E7:C5:9F:3A:23:3A
+SHA-256: 0B:24:66:ED:55:E7:F8:D6:60:1A:A2:4B:91:B2:8E:6C:3B:EE:C0:D0:4D:71:82:C1:25:A5:D3:FD:3B:41:9B:47
+Valid until: Thursday, March 14, 2052

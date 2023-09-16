@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">realtor</string>
+    <!--TODO: Replace "000000000000" with your Facebook App ID here-->
+    <string name="facebook_app_id">603798225197848</string>
+    <!--TODO: Replace "YOUR_CLIENT_ACCESS_TOKEN" with your client access token here-->
+    <string name="facebook_client_token">5c319792d8c2d89c68f99c66f225ada8</string>
+</resources>
