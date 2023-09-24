@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: "1.x"
       - name: Setup flutter
-        uses: subosito/flutter-actions@v2
+        uses: subosito/flutter-action@v2
         with:
           channel: "stable"
           cache: "true"
