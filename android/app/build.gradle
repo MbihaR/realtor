@@ -56,10 +56,10 @@ android {
             storePassword 'android'
         }
         release {
-            keyAlias keystoreProperties['AndroidDebugKey']
-            keyPassword keystoreProperties['android']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
             storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-            storePassword keystoreProperties['android']
+            storePassword keystoreProperties['storePassword']
         }
     }
 
