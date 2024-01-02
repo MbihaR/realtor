@@ -32,6 +32,11 @@ on:
     branches: [ "main" ]
 
   workflow_dispatch:
+    inputs:
+      release_notes:
+        type: string
+        required: true
+        default: 'This is a deployed realtor app, feel free to test it!'
 
 jobs:
   version:
