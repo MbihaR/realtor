@@ -99,7 +99,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build.yml
           workflow_conclusion: success
-          branch: floss
+          branch: main
           name: release.apk
           path: downloads
           if_no_artifact_found: fail
