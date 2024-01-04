@@ -97,7 +97,7 @@ jobs:
       # 4
       - uses: actions/upload-artifact@master
         with:
-          name: app-release
+          name: app-release.apk
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
           retention-days: 7
       # 5
@@ -105,30 +105,3 @@ jobs:
         with:
           name: mapping.txt
           path: build/app/outputs/mapping/release/mapping.txt
-
-      - uses: dawidd6/action-download-artifact@v2
-        with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          #workflow: ci.yml
-          workflow_conclusion: success
-          branch: main
-          name: app-release
-          # Optional, a directory where to extract artifact(s), defaults to the current directory
-          path: downloads
-          if_no_artifact_found: fail
-          search_artifacts: true
-          #commit: ${{github.event.pull_request.head.sha}}
-
-      # 2
-      - name: Generate release tag
-        id: tag
-        run: |
-          echo "::set-output name=release_tag::APP_$(date +"%Y.%m.%d_%H-%M")"
-      # 3
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: downloads/app-release-signed.apk
