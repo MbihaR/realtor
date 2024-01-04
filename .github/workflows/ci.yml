@@ -74,3 +74,18 @@ jobs:
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+      #- name: Upload to Play Store (Internal Testing)
+       # uses: r0adkll/upload-google-play@v1.0.18
+       # with:
+        #  serviceAccountJsonPlainText: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
+        #  packageName: com.testgroup.flutter_github_actions_android
+        #    releaseFiles: ${{steps.sign_app.outputs.signedReleaseFile}}
+         #     mappingFile: ./build/app/outputs/mapping/release/mapping.txt
+         # track: internal
+
+      - name: Create github artifact release # disable this to save storage
+        uses: ncipollo/release-action@v1
+        with:
+        artifacts: “build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab”
+        token: ${{ secrets.GITHUB_TOKEN }} # this is automatically provided by github
+        commit:
