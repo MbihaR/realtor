@@ -103,7 +103,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: mapping.txt
-          path: app/build/outputs/mapping/release/mapping.txt
+          path: build/app/outputs/mapping/release/mapping.txt
 
       - uses: dawidd6/action-download-artifact@v2
         with:
