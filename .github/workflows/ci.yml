@@ -97,8 +97,9 @@ jobs:
       # 4
       - uses: actions/upload-artifact@master
         with:
-          name: app-release.apk
+          name: app-release
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
+          retention-days: 7
       # 5
       - uses: actions/upload-artifact@master
         with:
@@ -108,14 +109,16 @@ jobs:
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          workflow: ci.yml
+          #workflow: ci.yml
           workflow_conclusion: success
           branch: main
-          name: app-release.apk
+          name: app-release
           # Optional, a directory where to extract artifact(s), defaults to the current directory
           path: downloads
           if_no_artifact_found: fail
           search_artifacts: true
+          #commit: ${{github.event.pull_request.head.sha}}
+
       # 2
       - name: Generate release tag
         id: tag
