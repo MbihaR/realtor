@@ -86,6 +86,6 @@ jobs:
       - name: Create github artifact release # disable this to save storage
         uses: ncipollo/release-action@v1
         with:
-        artifacts: “build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab”
-        token: ${{ secrets.GITHUB_TOKEN }} # this is automatically provided by github
-        commit:
+          artifacts: “build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab”
+          token: ${{ secrets.GITHUB_TOKEN }} # this is automatically provided by github
+          commit:
