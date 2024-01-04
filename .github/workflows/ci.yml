@@ -95,14 +95,14 @@ jobs:
           path: app/build/outputs/mapping/release/mapping.txt
 
       - uses: dawidd6/action-download-artifact@v2
-          with:
-            github_token: ${{secrets.GITHUB_TOKEN}}
-            workflow: build.yml
-            workflow_conclusion: success
-            branch: floss
-            name: release.apk
-            path: downloads
-            if_no_artifact_found: fail
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: floss
+          name: release.apk
+          path: downloads
+          if_no_artifact_found: fail
       # 2
       - name: Generate release tag
         id: tag
